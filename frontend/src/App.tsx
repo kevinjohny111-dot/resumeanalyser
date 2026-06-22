@@ -5,6 +5,7 @@ import UploadResume from "./pages/UploadResume";
 import MyResumes from "./pages/MyResumes";
 import ProtectedRoute from "./components/ProtectedRoute";
 import ResumeDetails from "./pages/ResumeDetails";
+import Register from "./pages/Register";
 function App() {
   return (
     <Routes>
@@ -41,6 +42,11 @@ function App() {
           </ProtectedRoute>
         }
       />
+      <Route
+       path="/register"
+        element={<Register />}
+        />
+      
     </Routes>
   );
 }

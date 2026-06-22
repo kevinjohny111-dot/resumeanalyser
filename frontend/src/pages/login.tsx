@@ -80,6 +80,12 @@ navigate("/dashboard");
 >
   Login
 </button>
+
+<button
+  onClick={() => navigate("/register")}
+>
+  Sign Up
+</button>
     </div>
   );
 }
