@@ -9,9 +9,16 @@ function ResumeDetails() {
   useEffect(() => {
     const fetchResume = async () => {
       try {
-        const response = await api.get(
-          `/resume/${id}`
-        );
+        const token = localStorage.getItem("token");
+
+const response = await api.get(
+  `/resume/${id}`,
+  {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  }
+ );
 
         setResume(response.data);
       } catch (error) {
