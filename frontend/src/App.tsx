@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import Login from "./pages/Login";
+import login from "./pages/login";
 import Dashboard from "./pages/Dashboard";
 import UploadResume from "./pages/UploadResume";
 import MyResumes from "./pages/MyResumes";
