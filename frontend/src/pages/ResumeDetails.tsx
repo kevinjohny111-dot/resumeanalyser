@@ -35,7 +35,7 @@ const response = await api.get(
 
   return (
     <div className="container">
-     <div className="card"></div>
+     <div className="card">
       <h1>Resume Details</h1>
 
       <p>ID: {resume.id}</p>
