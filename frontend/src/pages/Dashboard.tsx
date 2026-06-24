@@ -5,7 +5,7 @@ function Dashboard() {
 
   return (
     <div className="container">
-    <div className="card"></div>
+     <div className="card">
       <h1>Dashboard</h1>
 
       <button
@@ -33,7 +33,7 @@ function Dashboard() {
         Logout
       </button>
      
-    </div>
+     </div>
     </div>
   );
 }
