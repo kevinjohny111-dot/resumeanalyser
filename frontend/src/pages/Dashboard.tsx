@@ -4,7 +4,8 @@ function Dashboard() {
   const navigate = useNavigate();
 
   return (
-    <div>
+    <div className="container">
+    <div className="card"></div>
       <h1>Dashboard</h1>
 
       <button
@@ -32,6 +33,7 @@ function Dashboard() {
         Logout
       </button>
      
+    </div>
     </div>
   );
 }

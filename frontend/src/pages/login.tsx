@@ -50,8 +50,9 @@ function Login() {
   };
 
   return (
-    <div>
-      <h1>Login</h1>
+    <div className="container">
+      <div className="card">
+      <h1>RESUME ANALYZER</h1>
 
       <input
         type="email"

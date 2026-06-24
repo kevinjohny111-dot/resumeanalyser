@@ -21,7 +21,8 @@ function Register() {
   };
 
   return (
-    <div>
+    <div className="container">
+    <div className="card"></div>
       <h1>Register</h1>
 
       <input
@@ -53,6 +54,7 @@ function Register() {
         Register
       </button>
     </div>
+  </div>
   );
 }
 

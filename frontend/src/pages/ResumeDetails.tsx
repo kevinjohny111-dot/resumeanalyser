@@ -34,12 +34,14 @@ const response = await api.get(
   }
 
   return (
-    <div>
+    <div className="container">
+     <div className="card"></div>
       <h1>Resume Details</h1>
 
       <p>ID: {resume.id}</p>
       <p>Filename: {resume.filename}</p>
       <p>ATS Score: {resume.ats_score}</p>
+     </div>
     </div>
   );
 }

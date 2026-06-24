@@ -49,14 +49,21 @@ function MyResumes() {
     }
   };
 
-  return (
-    <div>
+ return (
+  <div className="container">
+    <div className="card">
       <h1>My Resumes</h1>
 
       {resumes.map((resume: any) => (
-        <div key={resume.id}>
-          <p>{resume.filename}</p>
-          <p>ATS Score: {resume.ats_score}</p>
+        <div
+          key={resume.id}
+          className="resume-card"
+        >
+          <h3>{resume.filename}</h3>
+
+          <p>
+            ATS Score: <strong>{resume.ats_score}</strong>
+          </p>
 
           <button
             onClick={() => handleDelete(resume.id)}
@@ -64,16 +71,18 @@ function MyResumes() {
             Delete
           </button>
 
-         <button
-          onClick={() => navigate(`/resume/${resume.id}`)}
-            >
-         View
-        </button> 
-          <hr />
+          <button
+            onClick={() =>
+              navigate(`/resume/${resume.id}`)
+            }
+          >
+            View
+          </button>
         </div>
       ))}
     </div>
-  );
+  </div>
+ ); 
 }
 
 export default MyResumes;
