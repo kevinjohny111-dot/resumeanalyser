@@ -21,7 +21,7 @@ function Register() {
   };
 
   return (
-    <div className="container">
+   <div className="container">
     <div className="card"></div>
       <h1>Register</h1>
 
@@ -53,8 +53,8 @@ function Register() {
       <button onClick={handleRegister}>
         Register
       </button>
-    </div>
-  </div>
+     </div>
+   </div>
   );
 }
 
