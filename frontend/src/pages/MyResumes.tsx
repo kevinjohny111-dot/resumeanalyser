@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../api";
+import BackButton from "../components/BackButton";
+
 
 function MyResumes() {
   const navigate = useNavigate();
@@ -52,6 +54,9 @@ function MyResumes() {
  return (
   <div className="container">
     <div className="card">
+
+      <BackButton />
+
       <h1>My Resumes</h1>
 
       {resumes.map((resume: any) => (
@@ -72,17 +77,13 @@ function MyResumes() {
           </button>
 
           <button
-            onClick={() =>
-              navigate(`/resume/${resume.id}`)
-            }
+            onClick={() => navigate(`/resume/${resume.id}`)}
           >
             View
           </button>
         </div>
       ))}
+
     </div>
   </div>
- ); 
-}
-
-export default MyResumes;
+);
