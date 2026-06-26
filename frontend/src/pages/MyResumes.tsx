@@ -83,8 +83,10 @@ function MyResumes() {
           </button>
         </div>
       ))}
-      }
+      
 
     </div>
   </div>
 );
+}
+export default MyResumes;
