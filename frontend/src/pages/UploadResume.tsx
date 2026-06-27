@@ -39,6 +39,7 @@ function UploadResume() {
 
   return (
     <div>
+      <BackButton />
       <h1>Upload Resume</h1>
 
       <input
