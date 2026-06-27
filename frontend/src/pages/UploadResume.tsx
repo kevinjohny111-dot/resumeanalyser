@@ -1,5 +1,6 @@
 import { useState } from "react";
 import api from "../api";
+import BackButton from "../components/BackButton";
 
 function UploadResume() {
   const [file, setFile] = useState<File | null>(null);

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import api from "../api";
-
+import BackButton from "../components/BackButton";
 function Register() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -20,9 +20,12 @@ function Register() {
     }
   };
 
-  return (
-   <div className="container">
-     <div className="card">
+ return (
+  <div className="container">
+    <div className="card">
+
+      <BackButton />
+
       <h1>Register</h1>
 
       <input
@@ -53,9 +56,11 @@ function Register() {
       <button onClick={handleRegister}>
         Register
       </button>
-     </div>
-   </div>
-  );
+
+    </div>
+  </div>
+);
+
 }
 
 export default Register;
