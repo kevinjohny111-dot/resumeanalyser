@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-
+import { toast } from "react-toastify";
 function Dashboard() {
   const navigate = useNavigate();
 
@@ -24,14 +24,18 @@ function Dashboard() {
 
       <br /><br />
 
-      <button
-        onClick={() => {
-          localStorage.removeItem("token");
-          navigate("/");
-        }}
-      >
-        Logout
-      </button>
+     <button
+     onClick={() => {
+     localStorage.removeItem("token");
+     toast.success("Logged out successfully!");
+
+     setTimeout(() => {
+      navigate("/");
+     }, 1000); // Wait 1 second so the toast is visible
+     }}
+     >
+     Logout
+     </button>
      
      </div>
     </div>

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import api from "../api";
 import BackButton from "../components/BackButton";
+import { toast } from "react-toastify/unstyled";
 
 function UploadResume() {
   const [file, setFile] = useState<File | null>(null);
@@ -31,9 +32,10 @@ function UploadResume() {
       );
 
       console.log(response.data);
-      alert("Resume uploaded!");
+       toast.success("Resume uploaded successfully!");
     } catch (error) {
       console.error(error);
+      toast.error("Failed to upload resume.");
     }
   };
 
