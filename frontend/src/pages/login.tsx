@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import api from "../api";
+import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
 function Login() {
@@ -33,11 +34,11 @@ function Login() {
           response.data.access_token
         );
 
-        alert("Login successful");
+        toast.success("Login successful!");
 
         navigate("/dashboard");
       } else {
-        alert(
+        toast.error(
           response.data.message ||
           "Invalid email or password"
         );
@@ -45,7 +46,7 @@ function Login() {
 
     } catch (error) {
       console.error(error);
-      alert("Login failed");
+      toast.error("Login failed");
     }
   };
 

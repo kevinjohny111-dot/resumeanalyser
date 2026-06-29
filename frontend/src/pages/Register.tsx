@@ -1,6 +1,7 @@
 import { useState } from "react";
 import api from "../api";
 import BackButton from "../components/BackButton";
+import { toast } from "react-toastify";
 function Register() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -14,9 +15,10 @@ function Register() {
         password,
       });
 
-      alert("User created!");
+      toast.success("User created!");
     } catch (error) {
       console.error(error);
+      toast.error("Registration failed");
     }
   };
 
