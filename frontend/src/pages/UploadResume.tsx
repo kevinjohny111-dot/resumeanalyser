@@ -1,7 +1,7 @@
 import { useState } from "react";
 import api from "../api";
 import BackButton from "../components/BackButton";
-import { toast } from "react-toastify/unstyled";
+import { toast } from "react-toastify";
 
 function UploadResume() {
   const [file, setFile] = useState<File | null>(null);
@@ -26,8 +26,7 @@ function UploadResume() {
     }
   };
 
-  // ...
-}
+  
 
   return (
     <div>
@@ -64,5 +63,5 @@ function UploadResume() {
     </div>
   );
  
-
+}
 export default UploadResume;
