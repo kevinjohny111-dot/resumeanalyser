@@ -63,6 +63,6 @@ function UploadResume() {
       </button>
     </div>
   );
-}
+ 
 
 export default UploadResume;
