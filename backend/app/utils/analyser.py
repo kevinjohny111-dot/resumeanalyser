@@ -65,7 +65,7 @@ def analyze_resume(text: str):
     found_skills = []
 
     for skill in skills:
-    pattern = r"\b" + re.escape(skill) + r"\b"
+     pattern = r"\b" + re.escape(skill) + r"\b"
 
     if re.search(pattern, text):
         found_skills.append(skill)
