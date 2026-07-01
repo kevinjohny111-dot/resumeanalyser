@@ -22,6 +22,7 @@ from app.models.resume import Resume
 from fastapi.security import OAuth2PasswordRequestForm
 from app.database.db import get_db
 from fastapi import Form
+import json
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="login")
 Base.metadata.create_all(bind=engine)
@@ -154,10 +155,12 @@ async def upload_resume(
     )
 
     resume = Resume(
-        filename=file.filename,
-        ats_score=result["ats_score"],
-        user_id=db_user.id
-    )
+     filename=file.filename,
+     ats_score=result["ats_score"],
+     skills_found=json.dumps(result["skills_found"]),
+     missing_skills=json.dumps(result["missing_skills"]),
+     user_id=db_user.id
+  )
 
     db.add(resume)
     db.commit()
@@ -277,7 +280,13 @@ def get_resume(
             "message": "Resume not found"
         }
 
-    return resume
+    return {
+     "id": resume.id,
+     "filename": resume.filename,
+     "ats_score": resume.ats_score,
+     "skills_found": json.loads(resume.skills_found),
+     "missing_skills": json.loads(resume.missing_skills)
+     }
 @app.delete("/resume/{resume_id}")
 def delete_resume(
     resume_id: int,

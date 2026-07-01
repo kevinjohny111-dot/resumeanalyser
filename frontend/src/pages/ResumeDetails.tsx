@@ -41,6 +41,19 @@ const response = await api.get(
       <p>ID: {resume.id}</p>
       <p>Filename: {resume.filename}</p>
       <p>ATS Score: {resume.ats_score}</p>
+      <h3>Skills Found</h3>
+    <ul>
+   {resume.skills_found.map((skill: string) => (
+    <li key={skill}>✅ {skill}</li>
+   ))}
+    </ul>
+
+  <h3>Missing Skills</h3>
+  <ul>
+  {resume.missing_skills.map((skill: string) => (
+    <li key={skill}>❌ {skill}</li>
+  ))}
+  </ul>
      </div>
     </div>
   );
