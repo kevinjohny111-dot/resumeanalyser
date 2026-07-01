@@ -158,8 +158,8 @@ def analyze_job_match(
     for skill in required_skills:
      pattern = r"\b" + re.escape(skill) + r"\b"
 
-      if re.search(pattern, resume_text):
-        found_skills.append(skill)
+     if re.search(pattern, resume_text):
+      found_skills.append(skill)
 
     missing_skills = [
         skill
