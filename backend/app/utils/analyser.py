@@ -1,4 +1,4 @@
-
+import re
 def analyze_resume(text: str):
     skills = [
     # Programming Languages
@@ -65,8 +65,10 @@ def analyze_resume(text: str):
     found_skills = []
 
     for skill in skills:
-        if skill in text:
-            found_skills.append(skill)
+    pattern = r"\b" + re.escape(skill) + r"\b"
+
+    if re.search(pattern, text):
+        found_skills.append(skill)
 
     ats_score = int(
         (len(found_skills) / len(skills)) * 100
@@ -146,14 +148,18 @@ def analyze_job_match(
     required_skills = []
 
     for skill in skills:
-        if skill in job_description:
-            required_skills.append(skill)
+     pattern = r"\b" + re.escape(skill) + r"\b"
+
+     if re.search(pattern, job_description):
+        required_skills.append(skill)
 
     found_skills = []
 
     for skill in required_skills:
-        if skill in resume_text:
-            found_skills.append(skill)
+     pattern = r"\b" + re.escape(skill) + r"\b"
+
+      if re.search(pattern, resume_text):
+        found_skills.append(skill)
 
     missing_skills = [
         skill
