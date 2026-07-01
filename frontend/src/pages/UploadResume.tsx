@@ -8,36 +8,26 @@ function UploadResume() {
   const [jobDescription, setJobDescription] = useState("");
 
   const handleUpload = async () => {
-    if (!file) return;
+    if (!file) {
+      toast.error("Please select a resume.");
+      return;
+    }
 
     const formData = new FormData();
-
     formData.append("file", file);
-    formData.append(
-      "job_description",
-      jobDescription
-    );
-
-    const token = localStorage.getItem("token");
+    formData.append("job_description", jobDescription);
 
     try {
-      const response = await api.post(
-        "/upload-resume",
-        formData,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+      await api.post("/upload-resume", formData);
 
-      console.log(response.data);
-       toast.success("Resume uploaded successfully!");
+      toast.success("Resume uploaded successfully!");
     } catch (error) {
-      console.error(error);
-      toast.error("Failed to upload resume.");
+      toast.error("Resume upload failed!");
     }
   };
+
+  // ...
+}
 
   return (
     <div>
