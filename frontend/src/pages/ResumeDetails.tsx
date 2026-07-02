@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import api from "../api";
+import BackButton from "../components/BackButton";
+
 
 function ResumeDetails() {
   const { id } = useParams();
@@ -36,6 +38,7 @@ const response = await api.get(
   return (
     <div className="container">
      <div className="card">
+      <BackButton />
       <h1>Resume Details</h1>
 
       <p>ID: {resume.id}</p>
